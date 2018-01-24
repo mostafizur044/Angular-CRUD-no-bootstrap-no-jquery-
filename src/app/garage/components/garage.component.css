@@ -1,0 +1,65 @@
+.wrapper{
+    margin: 80px;
+}
+.heading{
+    margin: 0px 20px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+}
+th{
+    white-space: nowrap;
+    font-weight: normal!important;
+}
+
+thead{background-color: #333; color:#fff;}
+
+tbody tr:nth-child(even){background-color: #f2f2f2}
+
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+
+@media screen and (max-width:1200px){
+    .wrapper{
+        margin: 50px;
+    }
+}
+@media screen and (max-width:768px){
+    .wrapper{
+        margin: 30px;
+    }
+}
+@media screen and (max-width:500px){
+    .wrapper{
+        margin: 20px;
+    }
+}
+
+.alret{
+    position: fixed;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}

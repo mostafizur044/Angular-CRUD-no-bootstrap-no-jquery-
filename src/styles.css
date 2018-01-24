@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html,body{
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn{
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    text-transform: uppercase;
+    color:#fff;
+}
+.btn-info{
+    background: #308cfc;
+}
+.btn-danger{
+    background: #d9534f;
+}
+.btn:hover,.btn:focus{
+    outline: none;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="alret" *ngIf="message!=''">
+        <div class="" [ngClass]="{'green':color,'red':!color}">{{message}}</div>
+    </div>
+    <div class="heading">
+        <h1>Car List in Garage</h1>
+        <button class="btn btn-info" (click)='open()'>Create Car</button>
+    </div>
+     
+    <div style="overflow-x:auto;margin:20px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Car Owner Name</th>
+                    <th>Address</th>
+                    <th>Phone No</th>
+                    <th>Car Brand</th>
+                    <th>Car Model</th>
+                    <th>Car Other Details</th>
+                    <th>Car Entry Date</th>
+                    <th>Car Release Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let car of carArray">
+                    <td>{{car.ownerName}}</td>
+                    <td>{{car.address}}</td>
+                    <td>{{car.phone}}</td>
+                    <td>{{car.brand}}</td>
+                    <td>{{car.model}}</td>
+                    <td>Car No: {{car.plate}}<br>Car Color: {{car.color}}</td>
+                    <td>{{car.entryDate}}</td>
+                    <td>{{car.releaseDate}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)='modal.openDeleteModal(car)'>Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <car-component #modal (getCar)="carAddedDone($event)" (cancel)="cancelAlert($event)"></car-component>
+
+</div>

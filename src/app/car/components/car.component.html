@@ -1,0 +1,82 @@
+
+<!-- The Modal -->
+<div id="mainModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-body" *ngIf="!del">
+        <div>
+            <h2>Car Details</h2>
+            <span id="close" (click)="closeModal()">&times;</span>
+        </div>
+        <form class="floating-labels" #form="ngForm">
+            <div class="row">
+                <div class="column form-group">
+                    <label>Car Owner Name</label>
+                    <input type="text" class="form-control" name="owner" #owner="ngModel" [(ngModel)]="car.ownerName">
+                    <span class="bar"></span>
+                </div>
+                <div class="column form-group">
+                    <label>Phone No</label>
+                    <input type="text" class="form-control" name="phone" #phone="ngModel" [(ngModel)]="car.phone">
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div class="form-group" style="padding:0px 10px;">
+                <label>Address</label>
+                <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="car.address">
+                <span class="bar"></span>
+            </div>
+            <div class="row">
+                <div class="column form-group">
+                    <label>Car Brand</label>
+                    <input type="text" class="form-control" name="brand" #brand="ngModel" [(ngModel)]="car.brand">
+                    <span class="bar"></span>
+                </div>
+                <div class="column form-group">
+                    <label>Car Model</label>
+                    <input type="text" class="form-control" name="model" #model="ngModel" [(ngModel)]="car.model">
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column form-group">
+                    <label>Car Plate No</label>
+                    <input type="text" class="form-control" name="plate" #plate="ngModel" [(ngModel)]="car.plate">
+                    <span class="bar"></span>
+                </div>
+                <div class="column form-group">
+                    <label>Car Color</label>
+                    <input type="text" class="form-control" name="color" #color="ngModel" [(ngModel)]="car.color">
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column form-group">
+                    <label>Car Entry Date</label>
+                    <input type="date" class="form-control" name="entryDate" #entryDate="ngModel" [(ngModel)]="car.entryDate">
+                    <span class="bar"></span>
+                </div>
+                <div class="column form-group">
+                    <label>Car Release Date</label>
+                    <input type="date" class="form-control" name="releaseDate" #releaseDate="ngModel" [(ngModel)]="car.releaseDate">
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <div style="text-align:center;padding:10px;">
+                <button class="btn btn-info" (click)=createCar(form)>Add</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-body" *ngIf="del">
+         <div class="delete-modal">
+            <div>
+                <h2>Do you want to delete {{ownerName}}'s information?</h2>
+                <span id="close" (click)="closeModal()">&times;</span>
+            </div>
+            <button class="btn btn-info" (click)=delete()>Delete</button>
+            <button class="btn btn-danger" (click)=closeModal()>Cancel</button>
+        </div>   
+    </div>
+  </div>
+
+</div>
